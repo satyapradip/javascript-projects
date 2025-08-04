@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: beige; /* A light gray background for the body */
+}
+
+.container {
+    /* This is the rule to add the background color */
+    background-color: #b0c4de; /* A light steel blue background */
+    
+    /* These properties make it look better */
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+
+    /* This uses Flexbox to align the boxes neatly */
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+/* Common styling for all boxes using the new .box class */
+.box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Specific colors for each box */
+.whiteBox { background-color: white; }
+.redBox { background-color: #ff6b6b; }
+.blueBox { background-color: #4d96ff; color: white; }
+.greenBox { background-color: #6bcB77; color: white; }
