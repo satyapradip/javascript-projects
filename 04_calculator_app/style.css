@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #222, #444);
+  padding: 2rem;
+}
+
+.header-content {
+  background: linear-gradient(45deg, #3a86ff, #8338ec);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  /* backdrop-filter: blur(10px); */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+}
+
+.result-container {
+  margin-bottom: 1.5rem;
+}
+
+#result {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2.5rem;
+  text-align: right;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: color-change 5s infinite alternate;
+}
+
+@keyframes color-change {
+  0% { background-color: rgba(0, 0, 0, 0.2); }
+  100% { background-color: rgba(0, 0, 0, 0.4); }
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.button {
+  height: 70px;
+  width: 70px;
+  padding: 0;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+.operator {
+  background: #ff9f0a;
+}
+
+.operator:hover {
+  background: #ffb74d;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .calculator {
+    padding: 1rem;
+  }
+
+  #result {
+    font-size: 2rem;
+  }
+
+  .button {
+    height: 60px;
+    width: 60px;
+    font-size: 1.2rem;
+  }
+}
