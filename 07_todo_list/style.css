@@ -1,0 +1,133 @@
+/* Reset default styles and set common properties for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;  /* Use Poppins font for the entire app */
+  box-sizing: border-box;              /* Include padding and border in element's total width and height */
+}
+
+
+/* Main container that holds the entire todo app */
+.container {
+  width: 100%;
+  min-height: 100vh;                           /* Take up at least the full viewport height */
+  background: linear-gradient(135deg, #153677, #4e085f);  /* Diagonal gradient background */
+  padding: 10px;
+}
+
+/* The white card that contains the todo app interface */
+.todo-app {
+  width: 100%;
+  max-width: 540px;                /* Limit width for larger screens */
+  background: #fff;
+  margin: 100px auto 20px;        /* Center the card and add spacing */
+  padding: 40px 30px 70px;        /* Interior spacing */
+  border-radius: 10px;            /* Rounded corners */
+}
+
+/* Style the header (app title) */
+.todo-app h2 {
+  color: #002765;
+  display: flex;                  /* Use flexbox for title and icon alignment */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style the icon next to the title */
+.todo-app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+/* Container for input field and add button */
+.row {
+  display: flex;                  /* Use flexbox for layout */
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;           /* Light gray background */
+  border-radius: 30px;           /* Highly rounded corners */
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+/* Style the input field */
+input {
+  flex: 1;                       /* Take up remaining space */
+  border: none;
+  outline: none;                 /* Remove focus outline */
+  background: transparent;
+  font-weight: 14px;
+  padding: 10px;
+}
+
+/* Style the add button */
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff5945;           /* Orange-red color */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;               /* Show pointer on hover */
+  border-radius: 40px;
+}
+
+/* Add space above the todo list */
+ul {
+  margin-top: 20px;
+}
+
+/* Style each todo list item */
+ul li {
+  position: relative;            /* For positioning the checkbox and delete button */
+  list-style: none;             /* Remove default bullet points */
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;  /* Extra left padding for checkbox */
+  -webkit-user-select: none;    /* Prevent text selection */
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Create custom checkbox using pseudo-element */
+ul li::before {
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;           /* Make it circular */
+  background-image: url(unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+/* Style for completed todo items */
+ul li.checked {
+  color: #555;                  /* Gray out the text */
+  text-decoration: line-through;  /* Strike through the text */
+}
+
+/* Change checkbox image when task is completed */
+ul li.checked::before {
+  background-image: url(checked.png);
+}
+
+/* Style for the delete button (×) */
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;          /* Make it circular */
+}
+
+/* Add hover effect to delete button */
+ul li span:hover {
+  background: #edeef0;         /* Light gray background on hover */
+}
